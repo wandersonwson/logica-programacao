@@ -161,7 +161,4 @@ public class ListaDeExercicios1 {
         System.out.println("---");
         return this;
     }
-    public void fecharScanner(){
-        scan.close();
-    }
 }

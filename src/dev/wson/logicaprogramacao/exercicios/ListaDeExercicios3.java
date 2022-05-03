@@ -18,13 +18,8 @@ public class ListaDeExercicios3 {
             somatorio += nota;
         }
         float media = somatorio/4;
-        if (media >= 7){
-            System.out.printf("Média: %.1f.%n", media);
-            System.out.printf("Situação de %s: Aprovado(a).%n", nome);
-        } else {
-            System.out.printf("Média: %.1f.%n", media);
-            System.out.printf("Situação de %s: Recuperação.%n", nome);
-        }
+        System.out.printf("Média: %.1f.%n", media);
+        System.out.printf("Situação de %s: %s.%n", nome, (media >= 7) ? "Aprovado(a)" : "Recuperação");
         System.out.println("---");
         return this;
     }
@@ -34,10 +29,10 @@ public class ListaDeExercicios3 {
         while (numero != 0){
             System.out.print("Digite um numero inteiro diferente de zero para verificação de sinal: ");
             numero = scan.nextInt();
-            if (numero > 0){
+            if (numero > 0) {
                 System.out.printf("O número %d é positivo.%n", numero);
             }
-            if (numero < 0){
+            if (numero < 0) {
                 System.out.printf("O número %d é negativo.%n", numero);
             }
         }
@@ -279,8 +274,5 @@ public class ListaDeExercicios3 {
         }
         System.out.println("---");
         return this;
-    }
-    public void fecharScanner(){
-        scan.close();
     }
 }

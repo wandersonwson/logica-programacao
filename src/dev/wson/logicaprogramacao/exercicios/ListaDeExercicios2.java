@@ -122,7 +122,4 @@ public class ListaDeExercicios2 {
         System.out.println("---");
         return this;
     }
-    public void fecharScanner(){
-        scan.close();
-    }
 }

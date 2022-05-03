@@ -3,22 +3,32 @@ package dev.wson.logicaprogramacao.exercicios;
 import java.util.Scanner;
 
 public class CarregadorDeListas {
+    Scanner scan = new Scanner(System.in);
     public void iniciar() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Lógica de Programação\nDigite o número da lista de exercícios desejada para execução:");
+        int opcao;
+        do {
+            opcao = exibirMenu();
+            switch (opcao) {
+                case 0 -> System.exit(0);
+                case 1 -> executarLista1();
+                case 2 -> executarLista2();
+                case 3 -> executarLista3();
+                case 4 -> executarLista4();
+                default -> System.out.println("Opção inválida.");
+            }
+        } while (opcao != 0);
+    }
+    public int exibirMenu() {
+        System.out.println("----------- Lógica de Programação ------------");
+        System.out.println("Escolha uma lista de exercícios para execução:");
         System.out.println("1 - Variáveis e tipos.");
         System.out.println("2 - Arrays, entradas e saídas.");
-        System.out.println("3 - Controle de fluxo e estruturas de repetição.");
-        int opcao = scan.nextInt();
-        switch (opcao) {
-            case 1 -> executarLista1();
-            case 2 -> executarLista2();
-            case 3 -> executarLista3();
-            default -> System.out.println("Opção inválida.");
-        }
-        scan.close();
+        System.out.println("3 - Controle de fluxo e laços de repetição.");
+        System.out.println("4 - Matrizes.");
+        System.out.println("0 - Sair.");
+        return scan.nextInt();
     }
-    public void executarLista1(){
+    public void executarLista1() {
         ListaDeExercicios1 lista = new ListaDeExercicios1();
         lista.converterCelsiusParaOutrasEscalas()
                 .definirCavalosPotencia()
@@ -34,8 +44,7 @@ public class CarregadorDeListas {
                 .calcularValorDeVenda()
                 .calcularCustoAoConsumidor()
                 .calcularAreaDoCirculo()
-                .calcularTotalDeFerraduras()
-                .fecharScanner();
+                .calcularTotalDeFerraduras();
     }
     public void executarLista2() {
         ListaDeExercicios2 lista = new ListaDeExercicios2();
@@ -44,8 +53,7 @@ public class CarregadorDeListas {
                 .listarAlunosENotas()
                 .listarDadosDePraias()
                 .calcularCombustivelParaViagem()
-                .calcularSomaDosQuadrados()
-                .fecharScanner();
+                .calcularSomaDosQuadrados();
     }
     public void executarLista3() {
         ListaDeExercicios3 lista = new ListaDeExercicios3();
@@ -60,7 +68,19 @@ public class CarregadorDeListas {
                 .verificarIdade()
                 .listarNumerosNumIntervalo()
                 .gerarNumeroAleatorio()
-                .validarDados()
-                .fecharScanner();
+                .validarDados();
+    }
+    public void executarLista4() {
+        ListaDeExercicios4 lista = new ListaDeExercicios4();
+        lista.buscarNome()
+                .gerarNumerosAleatorios()
+                .lerESalvarDezNumeros()
+                .encontrarMaiorValorDaMatriz()
+                .somarValoresDaMatriz()
+                .calcularMediaPorLinha()
+                .apostarNaLoteriaEsportiva()
+                .corrigirProva()
+                .buscarValorNaMatriz()
+                .localizarCidadePeloDDD();
     }
 }
