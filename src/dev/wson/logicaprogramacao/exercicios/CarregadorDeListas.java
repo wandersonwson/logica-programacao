@@ -72,8 +72,7 @@ public class CarregadorDeListas {
     }
     public void executarLista4() {
         ListaDeExercicios4 lista = new ListaDeExercicios4();
-        lista.buscarNome()
-                .gerarNumerosAleatorios()
+        lista.gerarNumerosAleatorios()
                 .lerESalvarDezNumeros()
                 .encontrarMaiorValorDaMatriz()
                 .somarValoresDaMatriz()
@@ -81,6 +80,7 @@ public class CarregadorDeListas {
                 .apostarNaLoteriaEsportiva()
                 .corrigirProva()
                 .buscarValorNaMatriz()
-                .localizarCidadePeloDDD();
+                .localizarCidadePeloDDD()
+                .buscarNome();
     }
 }
